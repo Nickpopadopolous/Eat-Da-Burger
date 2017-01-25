@@ -4,7 +4,7 @@ var method = require('method-override');
 
 var app = express();
 
-var PORT = process.env.PORT || 3000;
+var PORT = 3000;
 
 app.use(express.static(__dirname + '/public'));
 
