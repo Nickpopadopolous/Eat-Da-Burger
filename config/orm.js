@@ -1,14 +1,6 @@
 var connection = require('./connection.js');
 
-function printQuestion(num) {
-	var arr = [];
 
-	for (var i = 0; i < num; i++) {
-		arr.push('?');
-	}
-
-	return arr.toString();
-}
 
 function objToSql(ob) {
 	var arr = [];
@@ -40,7 +32,7 @@ var orm = {
 		queryString += cols.toString();
 		queryString += ') ';
 		queryString += 'VALUES (';
-		queryString += printQuestion(vals.length);
+		queryString += ' ?, 0';
 		queryString += ') ';
 
 		connection.query(queryString, vals, function(err, result) {

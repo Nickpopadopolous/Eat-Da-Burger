@@ -1,4 +1,4 @@
-<div class="jumbotron">
+<div class="jumbotron" id="jumbo">
 <h1>Eat Da Burger</h1>
 <img src="http://downloadclipart.org/do-upload/clipart/2016-07/Burger_png_clipart.png" id = "pic" alt="burger" height="42" width="42"/>
 </div>
@@ -6,7 +6,7 @@
   <div class="row">
   <div class= "col-md-6" >
     <h2>Ready to be devoured!</h2>
-    <ol>
+    <ul>
       {{#each burgers}}
         {{#unless this.devoured}}
           <li>
@@ -14,18 +14,18 @@
              <div class= "burgerBut">
            <form action="burgers/update/{{this.id}}?_method=PUT" method="POST"> 
               <input type="hidden" name="devoured" value="true">
-              <button class="burgerButton" type="submit">Eat it!</button>  
+              <button class="burgerButton" class="btn btn-success" type="submit">Eat it!</button>  
             </form>
             </div>
           </li>
         {{/unless}}
       {{/each}}
-    </ol>
+    </ul>
   </div>
 
   <div class= "col-md-6" class="devBurger">
     <h2>Devoured!</h2>
-    <ol>
+    <ul>
       {{#each burgers}}
         {{#if this.devoured}}
           <li>
@@ -34,7 +34,7 @@
           </li>
         {{/if}}
       {{/each}}
-    </ol>
+    </ul>
   </div>
 </div>
 <hr>
@@ -45,11 +45,12 @@
   <p>Enter a burger you want to eat Click the "Add Burger" button"</p>
   <form class="create-update-form" action="burgers/create" method="POST">
     <h2>Add a burger</h2>
+    <br>
       <div class="form-group">
         <label for="bur">Burger Name:</label>
         <input type="text" id="burgerOne" name="burger_name">
       </div>
-      <button type="submit">Add Burger</button>
+      <button class="btn btn-success" type="submit">Add Burger</button>
    </form>
 </div>
 </div>

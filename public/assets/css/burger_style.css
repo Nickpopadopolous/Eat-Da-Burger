@@ -6,8 +6,9 @@ h1 {
 	text-align: center;
 }
 
-#pic {
-	left: 100px;
+img {
+	height: 100px;
+	width: 100px;
 }
 
 .burgerBut {
@@ -18,3 +19,21 @@ h1 {
 body {
 	background: #6B91F1;
 }
+
+#jumbo {
+	text-align: center;
+}
+
+h2 {
+	color: white;
+}
+
+p {
+	font-weight: bold;
+	font-size: 18px;
+}
+
+li {
+	
+}
+
