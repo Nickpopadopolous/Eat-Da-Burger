@@ -14,8 +14,7 @@ router.get('/index', function (req, res) {
 });
 
 router.post('/burgers/create', function (req, res) {
-		var name = req.body.burger_name;
-	burger.create(['burger_name', 'devoured'], name , function (data) {
+	burger.create(['burger_name', 'devoured'], [req.body.burger_name, '0'] , function (data) {
 		res.redirect('/index');
 	});
 });
@@ -23,7 +22,7 @@ router.post('/burgers/create', function (req, res) {
 router.put('/burgers/update/:id', function (req, res) {
 	var condition = 'id = ' + req.params.id;
 
-	burger.update({ devoured: req.body.devoured }, condition, function (data) {
+	burger.update({devoured: req.body.devoured}, condition, function () {
 		res.redirect('/index');
 	});
 });

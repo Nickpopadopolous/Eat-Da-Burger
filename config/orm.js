@@ -24,7 +24,7 @@ function objToSql(ob) {
 
 var orm = {
 	all: function(tableInput, cb) {
-		var queryString = 'SELECT * FROM' + tableInput + ';';
+		var queryString = 'SELECT * FROM ' + tableInput + ';';
 		connection.query(queryString, function(err, result) {
 			if (err) {
 				throw err;
@@ -55,7 +55,7 @@ var orm = {
 		var queryString = 'UPDATE ' + table;
 
 		queryString +=  ' SET ';
-		queryString += objColVals(objColVals);
+		queryString += objToSql(objColVals);
 		queryString +=  ' WHERE ';
 		queryString += condition;
 

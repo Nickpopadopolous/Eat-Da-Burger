@@ -1,34 +1,36 @@
 <div class="jumbotron">
-<h1>
-Eat Da Burger</h1>
-<img src="http://downloadclipart.org/do-upload/clipart/2016-07/Burger_png_clipart.png" alt="burger" height="42" width="42"/>
+<h1>Eat Da Burger</h1>
+<img src="http://downloadclipart.org/do-upload/clipart/2016-07/Burger_png_clipart.png" id = "pic" alt="burger" height="42" width="42"/>
 </div>
 <div class="container">
-  <div class= "col-xs-12 text-center" >
+  <div class="row">
+  <div class= "col-md-6" >
     <h2>Ready to devoured!</h2>
     <ol>
       {{#each burgers}}
         {{#unless this.devoured}}
           <li>
-           <form action="burgers/update/{{this.id}}?_method=PUT" method="POST"> 
              {{this.id}}. {{this.burger_name}}
-              <input type="hidden" name="devoured" value="true">
+             <div class= "burgerBut">
+           <form action="burgers/update/{{this.id}}?_method=PUT" method="POST"> 
+              <input type="hidden" name="devoured" value="1">
               <button class="burgerButton" type="submit">Eat it!</button>  
             </form>
+            </div>
           </li>
         {{/unless}}
       {{/each}}
     </ol>
   </div>
 
-  <div class= "col-xs-12 text-center" >
+  <div class= "col-md-6" class="devBurger">
     <h2>Devoured!</h2>
     <ol>
       {{#each burgers}}
         {{#if this.devoured}}
           <li>
+           {{this.id}}. {{this.burger_name}}
               <input type="hidden" name="devoured" value="false">
-            {{this.id}}. {{this.burger_name}}
           </li>
         {{/if}}
       {{/each}}
@@ -37,6 +39,8 @@ Eat Da Burger</h1>
 </div>
 <hr>
 <br>
+<div class="row">
+<div class="col-md-12">
 <div class="addBurger">
   <p>Enter a burger you want to eat Click the "Submit" button"</p>
   <form class="create-update-form" action="burgers/create" method="POST">
@@ -47,4 +51,6 @@ Eat Da Burger</h1>
       </div>
       <button type="submit">Add Burger</button>
    </form>
+</div>
+</div>
 </div>
