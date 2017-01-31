@@ -5,7 +5,7 @@
 <div class="container">
   <div class="row">
   <div class= "col-md-6" >
-    <h2>Ready to devoured!</h2>
+    <h2>Ready to be devoured!</h2>
     <ol>
       {{#each burgers}}
         {{#unless this.devoured}}
@@ -13,7 +13,7 @@
              {{this.id}}. {{this.burger_name}}
              <div class= "burgerBut">
            <form action="burgers/update/{{this.id}}?_method=PUT" method="POST"> 
-              <input type="hidden" name="devoured" value="1">
+              <input type="hidden" name="devoured" value="true">
               <button class="burgerButton" type="submit">Eat it!</button>  
             </form>
             </div>
@@ -42,7 +42,7 @@
 <div class="row">
 <div class="col-md-12">
 <div class="addBurger">
-  <p>Enter a burger you want to eat Click the "Submit" button"</p>
+  <p>Enter a burger you want to eat Click the "Add Burger" button"</p>
   <form class="create-update-form" action="burgers/create" method="POST">
     <h2>Add a burger</h2>
       <div class="form-group">

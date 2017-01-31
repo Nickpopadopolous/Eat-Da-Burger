@@ -6,13 +6,13 @@ h1 {
 	text-align: center;
 }
 
-.pic {
+#pic {
 	left: 100px;
 }
 
 .burgerBut {
-	float: right;
-	display: inline;
+	display: inline-block;
+
 }
 
 body {
