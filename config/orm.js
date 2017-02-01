@@ -1,7 +1,6 @@
 var connection = require('./connection.js');
 
 
-
 function objToSql(ob) {
 	var arr = [];
 
